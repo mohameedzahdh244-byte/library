@@ -1,0 +1,414 @@
+/* أنماط صفحة إضافة مشترك */
+body {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 20px;
+}
+.form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+}
+.form-label {
+  font-weight: 600;
+}
+button.btn-success {
+  min-width: 130px;
+}
+
+/* ===== Password field with generate button (like login style) ===== */
+.generate-btn {
+  position: absolute;
+  left: 8px;           /* مكان زر التوليد النهائي */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;         /* أقل من العين لضمان عدم التداخل بصرياً */
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: none !important;   /* لا حركة إطلاقاً */
+  box-shadow: none;   /* بدون ظلال قد توحي بالحركة */
+  border-width: 1px;  /* ثبات الحدود يمنع القفز */
+  line-height: 1.2;
+}
+
+.generate-btn:hover { /* لا حركة ولا تغيير موضع */
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+  transform: translateY(-50%) !important;
+}
+.generate-btn:focus,
+.generate-btn:active {
+  transform: translateY(-50%) !important; /* لا نزول/طلوع عند الضغط */
+  box-shadow: none !important;            /* إلغاء ظل التركيز */
+  outline: none !important;
+}
+.generate-btn:focus-visible,
+.generate-btn:not(:disabled):not(.disabled):active,
+.generate-btn:active:focus {
+  transform: translateY(-50%) !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+.generate-btn i { pointer-events: none; }
+
+.modern-input-group .modern-form-control {
+  padding-left: 240px; /* مساحة أكبر لمنع التداخل بعد إبعاد العين */
+}
+
+
+.modern-input-group .toggle-password-icon {
+  cursor: pointer;
+  transition: none; /* لا حركة */
+  left: 80px !important; /* إبعاد العين أكثر عن زر التوليد */
+  z-index: 3; /* أعلى من زر التوليد */
+}
+
+.modern-input-group .toggle-password-icon:hover {
+  color: var(--primary-color) !important;
+  background-color: rgba(30,58,138,0.1);
+  transform: translateY(-50%); /* بدون تكبير */
+}
+
+
+/* تنسيق عالمي ومتماسك لصف أرقام الجوال */
+.phone-row {
+  align-items: stretch;
+}
+.phone-row .input-group-text {
+  background: #f1f5f9;
+  border-color: #e5e7eb;
+}
+.phone-row .form-control {
+  border-inline-start: 0; /* يندمج مع أيقونة الهاتف */
+  border-inline-end: 0;   /* يندمج مع أيقونة الإضافة/الحذف */
+}
+.phone-row .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: .5rem;
+  min-width: 2.25rem;
+}
+.phone-row .btn-icon i { font-size: 1rem; }
+.phone-row .btn-outline-success,
+.phone-row .btn-outline-danger {
+  border-color: #e5e7eb;
+}
+.phone-row .btn-outline-success:hover { background:#e8f5e9; }
+.phone-row .btn-outline-danger:hover { background:#ffebee; }
+
+/* تقليل المسافات الرأسية بين الصفوف */
+#phonesRepeater .phone-row,
+#phonesRepeaterEdit .phone-row { margin-bottom: .25rem; }
+
+/* أيقونات مدمجة داخل الحقل */
+.phone-row .addon-action{
+  background:#f8fafc;
+  border-color:#e5e7eb;
+  cursor:pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+.phone-row .addon-action:last-child{ border-start-end-radius:.375rem; border-end-end-radius:.375rem; }
+.phone-row .addon-action:hover{ background:#eef2f7; color:#0d6efd; }
+.phone-row .addon-action i{ font-size:1rem; }
+
+/* --- أيقونات داخل الحقل (بنية position-relative) --- */
+.phone-row.position-relative { position: relative; }
+.phone-row .form-control {
+  /* نحدد الحشوات صراحةً لضمان ثباتها في جميع الاتجاهات */
+  padding-left: 2.25rem;  /* مساحة زر الإضافة/الحذف داخل الحقل (يسار) */
+  padding-right: 2rem;    /* مساحة أيقونة الهاتف داخل الحقل (يمين) */
+  height: 42px;
+  border-radius: .5rem;
+}
+.field-icon.start{
+  position:absolute;
+  right:.75rem; /* داخل الحقل من الجهة اليمنى */
+  top:50%; transform:translateY(-50%);
+  color:#64748b; pointer-events:none; font-size:1rem; z-index:1;
+  transition: color .15s ease;
+}
+.icon-btn{
+  position:absolute; left:.5rem; top:50%; transform:translateY(-50%);
+  border:1px solid #e2e8f0 !important; background:#f8fafc !important; width:2rem; height:2rem; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:none; z-index:2;
+  transition: background-color .15s ease, color .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.icon-btn i{ font-size:1rem; }
+.icon-btn.add-phone{ color:#16a34a; }
+.icon-btn.add-phone:hover{ background:#e8f5e9; border-color:#c7eed8 !important; box-shadow:0 0 0 .15rem rgba(22,163,74,.15); }
+.icon-btn.add-phone:hover i{ color:#15803d; }
+.icon-btn.remove-phone{ color:#dc2626; }
+.icon-btn.remove-phone:hover{ background:#fee2e2; border-color:#fecaca !important; box-shadow:0 0 0 .15rem rgba(220,38,38,.12); }
+.icon-btn.remove-phone:hover i{ color:#b91c1c; }
+.icon-btn:focus{ outline:none; box-shadow:none; }
+
+/* إبراز الأيقونة عند التركيز داخل الحقل */
+.phone-row:focus-within .field-icon.start{ color:#0d6efd; }
+
+/* ---- تحسينات التقاط الصورة بالكاميرا ---- */
+
+/* حاوي الأفاتار الرئيسي */
+.avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+/* الصورة/الفيديو الدائري مع تأثيرات جميلة */
+.avatar-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #f8f9fa;
+  cursor: pointer;
+}
+
+.avatar-image:hover {
+  transform: scale(1.02);
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Mirror only the live video preview for a natural selfie experience */
+video#cameraStream.avatar-image {
+  transform: scaleX(-1);
+}
+
+/* Preserve hover scale together with mirroring */
+video#cameraStream.avatar-image:hover {
+  transform: scaleX(-1) scale(1.02);
+}
+
+/* أيقونة الكاميرا مع السهم */
+.avatar-camera-overlay {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #0d6efd 0%, #0056b3 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  border: 3px solid #ffffff;
+  box-shadow: 
+    0 2px 8px rgba(13, 110, 253, 0.3),
+    0 1px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.avatar-camera-overlay:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    0 4px 12px rgba(13, 110, 253, 0.4),
+    0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+/* مجموعة التحكم بالكاميرا */
+.camera-controls {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* تحسين input-group للكاميرا - تصميم موحد احترافي */
+.camera-controls .input-group {
+  background: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.camera-controls .input-group:hover {
+  border-color: #28a745;
+  box-shadow: 0 6px 25px rgba(40, 167, 69, 0.15);
+}
+
+.camera-controls .input-group:focus-within {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+/* حقل الاختيار - مدموج بسلاسة */
+.camera-controls .input-group .form-select {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 16px 20px;
+  text-align: right;
+  font-weight: 500;
+  color: #495057;
+  border-radius: 0;
+  outline: none;
+}
+
+.camera-controls .input-group .form-select:focus {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+/* زر الالتقاط - مدموج تماماً مع الحقل */
+.camera-controls .input-group .btn.input-group-btn {
+  border: none;
+  border-radius: 0;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  position: relative;
+}
+
+.camera-controls .input-group .btn.input-group-btn:hover {
+  background: linear-gradient(135deg, #218838 0%, #1abc9c 100%);
+  transform: none;
+}
+
+.camera-controls .input-group .btn.input-group-btn:active {
+  transform: scale(0.98);
+}
+
+.camera-controls .input-group .btn.input-group-btn i { 
+  margin: 0 !important; 
+  font-size: 16px;
+}
+
+/* تحسين الأزرار */
+.camera-controls .btn {
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  display: inline-flex;           /* لضبط الأيقونة مع النص */
+  align-items: center;
+  gap: .4rem;                     /* مسافة موحّدة بين الأيقونة والنص وتدعم RTL تلقائياً */
+}
+
+.camera-controls .btn-primary {
+  background: linear-gradient(135deg, #0d6efd 0%, #0056b3 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+.camera-controls .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(13, 110, 253, 0.4);
+}
+
+.camera-controls .btn-success {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+  font-size: 16px;
+}
+
+.camera-controls .btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.4);
+}
+
+.camera-controls .btn-outline-secondary {
+  border: 2px solid #6c757d;
+  color: #6c757d;
+  background: transparent;
+  font-weight: 600;
+}
+
+.camera-controls .btn-outline-secondary:hover {
+  background: #6c757d;
+  border-color: #6c757d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+/* شريط الأزرار: التقاط / إعادة التقاط */
+.camera-actions {
+  margin-top: .25rem;
+}
+.camera-actions .btn {
+  min-width: 210px;
+  border-radius: 10px;
+}
+.camera-actions #captureBtn.btn-success {
+  background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+  border: none;
+  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.25);
+}
+.camera-actions #captureBtn.btn-success:hover {
+  transform: translateY(-2px);
+}
+.camera-actions #retakeBtn {
+  border-width: 2px;
+}
+
+/* تأثيرات الأيقونات */
+.camera-controls .btn i {
+  font-size: 16px;
+  vertical-align: middle;
+  margin: 0 !important;           /* نعتمد على gap بدل هوامش Bootstrap me-1 */
+}
+
+/* تحسين المسافات والتخطيط */
+.camera-controls .d-flex.gap-2 {
+  gap: 12px !important;
+}
+
+/* تأثير التركيز للعناصر التفاعلية */
+.camera-controls button:focus,
+.camera-controls select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25) !important;
+}
+
+/* تجاوب مع الشاشات الصغيرة */
+@media (max-width: 576px) {
+  .avatar-container {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .avatar-image {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .camera-controls {
+    max-width: 100%;
+  }
+  
+  .camera-controls .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

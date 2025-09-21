@@ -1,0 +1,108 @@
+ 
+ 
+    body.borrow-page {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+    }
+    
+    .borrow-page .main-container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        margin: 20px auto;
+        max-width: 1200px;
+    }
+    
+    .borrow-page .header {
+        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 15px 15px 0 0;
+        text-align: center;
+    }
+    
+    .borrow-page .dashboard-btn {
+        margin: 10px;
+        padding: 15px 25px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        border: none;
+        font-weight: bold;
+    }
+    
+    .borrow-page .dashboard-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .borrow-page .btn-borrow {
+        background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+        color: white;
+    }
+    
+    .borrow-page .btn-return {
+        background: linear-gradient(135deg, #f44336);
+        color: white;
+    }
+    
+    .borrow-page .modal-content {
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+    
+    .borrow-page .modal-header {
+        border-radius: 15px 15px 0 0;
+        border-bottom: none;
+        padding: 20px;
+    }
+    
+    .borrow-page .form-control, .borrow-page .form-select {
+        border-radius: 8px;
+        border: 2px solid #e9ecef;
+        padding: 12px;
+        transition: all 0.3s ease;
+    }
+    
+    .borrow-page .form-control:focus, .borrow-page .form-select:focus {
+        border-color: #4CAF50;
+        box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+    }
+    
+    .borrow-page .alert {
+        border-radius: 10px;
+        border: none;
+        font-weight: 500;
+    }
+    
+    
+    .borrow-page .book-item {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 15px;
+        margin: 10px 0;
+        border-left: 4px solid #4CAF50;
+        transition: all 0.3s ease;
+    }
+    
+    .borrow-page .book-item:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: translateX(5px);
+    }
+    
+    .borrow-page .overdue {
+        border-left-color: #FF9800 0%, #F57C00 100% !important;
+        background: rgba(244, 67, 54, 0.1);
+    }
+    
+    .borrow-page .success-animation {
+        animation: successPulse 0.6s ease-in-out;
+    }
+    
+    @keyframes successPulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }

@@ -1,0 +1,660 @@
+* {
+    font-family: 'Cairo', sans-serif;
+}
+:root {
+     /* الألوان الأساسية */
+    --primary-color: #1e3a8a;
+    --secondary-color: #64748b;
+    --accent-color: #f59e0b;
+    --danger-color: #ef4444;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    
+    /* ألوان الخلفية */
+    --bg-light: #f8fafc;
+    --bg-dark: #1e293b;
+    --card-bg: #ffffff;
+    --card-bg-dark: #334155;
+    
+    /* النصوص */
+    
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-light: #ffffff;
+    
+    /* الظل */
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+
+}
+
+/* تأثيرات البحث المتقدمة */
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.book-card:hover .hover-overlay {
+    opacity: 1 !important;
+}
+
+.book-card:hover .card-title {
+    color: #667eea;
+}
+
+.book-card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.book-card .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+.book-card .btn-outline-secondary:hover i {
+    transform: scale(1.1);
+}
+
+.pagination .page-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.no-results-container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* الوضع الليلي */
+[data-theme="dark"] {
+    --bg-light: #1e293b;
+    --bg-dark: #0f172a;
+   
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s ease;
+}
+
+/* Isolate alert styles */
+.login-alert * {
+    background: none !important;
+    color: inherit !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* ===== Modern Input Group ===== */
+.modern-input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.modern-form-control {
+    width: 100%;
+    padding: 1rem 3rem 1rem 3rem;
+    font-size: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background-color: #f8fafc;
+    transition: all 0.3s;
+    outline: none;
+    color: var(--text-primary);
+    font-family: 'Cairo', sans-serif;
+}
+
+.modern-form-control:focus {
+    border-color: var(--primary-color);
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(30,58,138,0.1);
+    transform: translateY(-1px);
+}
+
+.modern-form-control::placeholder {
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+.input-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    z-index: 2;
+}
+
+.toggle-password-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 2;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.toggle-password-icon:hover {
+    color: var(--primary-color);
+    background-color: rgba(30,58,138,0.1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.modern-input-group:focus-within .input-icon {
+    color: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.modern-input-group:focus-within .toggle-password-icon {
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    /* تدرّج أزرق موحّد: داكن -> أساسي */
+    background: linear-gradient(135deg, #0D47A1, var(--primary-color));
+    border: none;
+    border-radius: 12px;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    /* تفتيح بسيط للطرف الثاني لتمييز التحويم */
+    background: linear-gradient(135deg, #0D47A1, #3b82f6);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(30,58,138,0.3);
+}
+
+
+
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 768px) {
+    .modern-form-control {
+        padding: 0.875rem 2.5rem 0.875rem 2.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .input-icon {
+        right: 0.875rem;
+        font-size: 1rem;
+    }
+    
+    .toggle-password-icon {
+        left: 0.875rem;
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+    
+    .btn-primary {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* تخصيص Bootstrap للعربية */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Navbar: force solid white color for links and brand without affecting dropdown items */
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav > .nav-item > .nav-link {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.navbar-dark .navbar-nav > .nav-item > .nav-link:hover,
+.navbar-dark .navbar-nav > .nav-item > .nav-link:focus,
+.navbar-dark .navbar-brand:hover,
+.navbar-dark .navbar-brand:focus {
+    color: #ffffff !important;
+    opacity: 0.95 !important;
+    text-decoration: none;
+}
+
+/* Icons inside navbar links inherit strong white */
+.navbar-dark .navbar-nav > .nav-item > .nav-link i {
+    color: inherit !important;
+}
+
+/* Hover animation: sliding underline for navbar links */
+.navbar-dark .navbar-nav > .nav-item > .nav-link {
+    position: relative;
+    transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+.navbar-dark .navbar-nav > .nav-item > .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.3rem;
+    height: 2px;
+    width: 100%;
+    background: #ffffff;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+    opacity: 0.9;
+}
+
+.navbar-dark .navbar-nav > .nav-item > .nav-link:hover::after,
+.navbar-dark .navbar-nav > .nav-item > .nav-link:focus::after {
+    transform: scaleX(1);
+}
+
+/* Subtle text/icon motion and glow on hover */
+.navbar-dark .navbar-nav > .nav-item > .nav-link:hover,
+.navbar-dark .navbar-nav > .nav-item > .nav-link:focus {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.35);
+    transform: translateY(-1px);
+}
+
+.navbar-dark .navbar-nav > .nav-item > .nav-link i {
+    color: inherit !important;
+    transition: transform 0.2s ease;
+}
+
+.navbar-dark .navbar-nav > .nav-item > .nav-link:hover i,
+.navbar-dark .navbar-nav > .nav-item > .nav-link:focus i {
+    transform: translateY(-1px);
+}
+
+/* Theme toggle button: make outline light truly white */
+#themeToggle.btn-outline-light {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+#themeToggle.btn-outline-light:hover,
+#themeToggle.btn-outline-light:focus {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+/* Subtle glow and motion on theme toggle */
+#themeToggle {
+    transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+#themeToggle:hover {
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+#themeToggle:active {
+    transform: translateY(0);
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+/* الصفحة الرئيسية */
+.hero-section {
+
+    /* تدرّج أزرق فقط: من داكن إلى فاتح */
+    background: linear-gradient(135deg, #0D47A1 0%, #3b82f6 100%);    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* تحسين التباين في نصوص الهيرو لقراءة أوضح */
+.hero-section .display-4,
+.hero-section .lead,
+.hero-section .text-light {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* فقرة "استكشف مجموعتنا" تصبح أكثر وضوحًا */
+.hero-description {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 1.2s ease-out 0.3s both;
+}
+
+.animate-slide-up-delay {
+    animation: slideUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تحسينات عامة */
+.statement-text {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    line-height: 1.8;
+    color: #2c3e50;
+}
+
+/* تأثيرات تفاعلية للأيقونات */
+.icon-circle {
+    transition: all 0.3s ease;
+}
+
+.info-card:hover .icon-circle {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* تحسين المتجاوبية */
+@media (max-width: 768px) {
+    .hero-logo {
+        height: 80px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+/* جداول البيانات */
+.table {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 1rem;
+}
+
+.table td {
+    padding: 1rem;
+    border-color: #e2e8f0;
+    vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--bg-light);
+}
+
+/* رسائل التنبيه */
+.alert {
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.alert-success {
+    background-color: #dcfce7;
+    color: #166534;
+    border-left: 4px solid var(--success-color);
+}
+
+.alert-danger {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border-left: 4px solid var(--danger-color);
+}
+
+.alert-warning {
+    background-color: #fefbeb;
+    color: #92400e;
+    border-left: 4px solid var(--warning-color);
+}
+
+.alert-info {
+    background-color: #eff6ff;
+    color: #1e40af;
+    border-left: 4px solid #3b82f6;
+}
+
+/* النوافذ المنبثقة */
+.modal-content {
+    border: none;
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.modal-header {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.5rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #e2e8f0;
+    padding: 1.5rem;
+}
+
+/* الاستجابة للأجهزة المحمولة */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 60vh;
+        text-align: center;
+    }
+    
+    .stats-number {
+        font-size: 2rem;
+    }
+    
+}
+
+/* تخصيص شريط التمرير */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-secondary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* ===== RTL Offcanvas Header Alignment (global) ===== */
+html[dir="rtl"] .offcanvas-header {
+    justify-content: space-between; /* title and close on edges */
+    padding-inline: .5rem; /* like px-2 */
+}
+
+html[dir="rtl"] .offcanvas-header .offcanvas-title {
+    margin: 0;
+}
+
+html[dir="rtl"] .offcanvas-header .btn-close {
+    margin: 0; /* remove default margin */
+}
+
+/* ===== Offcanvas Visual Enhancements (global) ===== */
+.offcanvas {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Rounded visible edge depending on side */
+.offcanvas-start {
+    border-radius: 0 12px 12px 0;
+}
+.offcanvas-end {
+    border-radius: 12px 0 0 12px;
+}
+
+/* Sticky header with subtle separation */
+.offcanvas-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(2, 6, 23, 0.06);
+}
+.offcanvas-header.bg-primary,
+.offcanvas-header.bg-secondary,
+.offcanvas-header.bg-success,
+.offcanvas-header.bg-danger,
+.offcanvas-header.bg-warning,
+.offcanvas-header.bg-info,
+.offcanvas-header.text-white {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Title and close button polish */
+.offcanvas-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.offcanvas .btn-close {
+    opacity: 0.9;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.offcanvas .btn-close:hover {
+    transform: scale(1.06);
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .offcanvas-title { font-size: 1rem; }
+}
+
+/* ===== RTL fixes: alert close button spacing ===== */
+html[dir="rtl"] .alert {
+    position: relative;
+}
+html[dir="rtl"] .alert-dismissible {
+    /* بدلاً من padding-right في LTR نستخدم padding-left في RTL كي لا يتراكب زر الإغلاق مع النص */
+    padding-left: 3rem; /* مساحة كافية لزر الإغلاق */
+    padding-right: 1.25rem; /* حشو افتراضي للنص */
+}
+html[dir="rtl"] .alert-dismissible .btn-close {
+    position: absolute;
+    left: .75rem;
+    right: auto;
+}
+
+/* ===== RTL fixes: modal header close button spacing (احترازي) ===== */
+html[dir="rtl"] .modal-header {
+    padding-left: 3rem; /* افسح مجالاً لزر الإغلاق في اليسار عند الحاجة */
+}
+html[dir="rtl"] .modal-header .btn-close {
+    margin-left: 0.25rem;
+    margin-right: 0; /* إزالة أي هامش قد يسبب تراكب */
+}

@@ -1,0 +1,115 @@
+/* Header CSS المحترف */
+
+/* تأثيرات الشعار */
+.navbar-brand:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.navbar-brand img {
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* تأثيرات روابط التنقل */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.15) !important;
+    transform: translateY(-1px);
+    color: #fff !important;
+}
+
+/* تأثيرات الدروب داون */
+.dropdown-menu {
+    animation: slideDown 0.3s ease;
+    transform-origin: top;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.dropdown-item {
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: rgba(102, 126, 234, 0.1) !important;
+    transform: translateX(5px);
+    color: #667eea !important;
+}
+
+/* تأثيرات زر الوضع الليلي */
+#themeToggle {
+    position: relative;
+    overflow: hidden;
+}
+
+#themeToggle:hover {
+    background: rgba(255,255,255,0.2) !important;
+    transform: rotate(15deg) scale(1.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+#themeToggle:active {
+    transform: rotate(15deg) scale(0.95);
+}
+
+/* تأثيرات زر تسجيل الدخول */
+.nav-link[href*="loginform"]:hover {
+    background: rgba(255,255,255,0.25) !important;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* تحسينات الموبايل */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: rgba(102, 126, 234, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        margin-top: 10px;
+        padding: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .nav-link {
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    .dropdown-menu {
+        background: rgba(255,255,255,0.98) !important;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+}
+
+/* تحسين النص الفرعي */
+.navbar-brand small {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-brand:hover small {
+    opacity: 1;
+}
+
+/* تحسين الظلال */
+.shadow-sm {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+}

@@ -1,0 +1,244 @@
+/* Enhanced Forms CSS - Global Form Styling */
+
+/* Floating Labels Enhancement */
+.form-floating > .form-control {
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    padding: 1rem 0.75rem;
+}
+
+.form-floating > .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.15);
+    transform: translateY(-2px);
+}
+
+.form-floating > label {
+    font-weight: 600;
+    color: #495057;
+    padding-right: 1rem;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: #007bff;
+}
+
+/* Button Enhancements */
+.btn-enhanced {
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-enhanced.btn-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border: none;
+}
+
+.btn-enhanced.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,123,255,0.3);
+}
+
+.btn-enhanced.btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border: none;
+}
+
+.btn-enhanced.btn-success:hover {
+    background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(40,167,69,0.3);
+}
+
+.btn-enhanced.btn-outline-secondary {
+    border: 2px solid #6c757d;
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.btn-enhanced.btn-outline-secondary:hover {
+    background: #6c757d;
+    border-color: #6c757d;
+    transform: translateY(-2px);
+}
+
+/* Card Header Enhancement */
+.card-header-enhanced {
+    background: linear-gradient(135deg, var(--header-color-1, #007bff) 0%, var(--header-color-2, #0056b3) 100%);
+    border-radius: 12px 12px 0 0;
+    border: none;
+    padding: 1.5rem;
+}
+
+.card-header-enhanced.bg-primary {
+    --header-color-1: #007bff;
+    --header-color-2: #0056b3;
+}
+
+.card-header-enhanced.bg-success {
+    --header-color-1: #28a745;
+    --header-color-2: #20c997;
+}
+
+.card-header-enhanced.bg-info {
+    --header-color-1: #17a2b8;
+    --header-color-2: #138496;
+}
+
+.card-header-enhanced.bg-warning {
+    --header-color-1: #ffc107;
+    --header-color-2: #e0a800;
+}
+
+/* Icon Circle */
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: rgba(255,255,255,0.2);
+}
+
+/* Form Validation Styling */
+.form-control.is-invalid {
+    border-color: #dc3545;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Loading Spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Card Hover Effects */
+.card-enhanced {
+    border-radius: 16px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.card-enhanced:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* Input Group Enhancement */
+.input-group-enhanced .input-group-text {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 12px 0 0 12px;
+    font-weight: 600;
+}
+
+.input-group-enhanced .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 0 12px 12px 0;
+    border-left: none;
+}
+
+.input-group-enhanced .form-control:focus {
+    border-color: #007bff;
+    box-shadow: none;
+}
+
+.input-group-enhanced .form-control:focus + .input-group-text,
+.input-group-enhanced .input-group-text:has(+ .form-control:focus) {
+    border-color: #007bff;
+}
+
+/* Select Enhancement */
+.form-select-enhanced {
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.form-select-enhanced:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.15);
+    transform: translateY(-1px);
+}
+
+/* Status Badges */
+.status-badge-enhanced {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.status-badge-enhanced:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-floating > .form-control {
+        font-size: 1rem;
+    }
+    
+    .btn-enhanced {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .icon-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* RTL Support */
+[dir="rtl"] .form-floating > label {
+    right: 0.75rem;
+    left: auto;
+}
+
+[dir="rtl"] .input-group-enhanced .input-group-text {
+    border-radius: 0 12px 12px 0;
+}
+
+[dir="rtl"] .input-group-enhanced .form-control {
+    border-radius: 12px 0 0 12px;
+    border-right: none;
+    border-left: 2px solid #e9ecef;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .form-floating > .form-control {
+        background-color: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .form-floating > label {
+        color: #a0aec0;
+    }
+    
+    .card-enhanced {
+        background-color: #2d3748;
+        color: #e2e8f0;
+    }
+}

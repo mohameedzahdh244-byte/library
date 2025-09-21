@@ -1,0 +1,418 @@
+/* Footer CSS الخرافي */
+
+/* ألوان مخصصة */
+.text-white-75 {
+    color: rgba(255,255,255,0.75) !important;
+}
+
+/* تأثيرات الخلفية المتحركة */
+.footer-luxury {
+    position: relative;
+    background-attachment: fixed;
+}
+
+/* موجات متحركة */
+.wave-path {
+    animation: waveMove 8s ease-in-out infinite;
+}
+
+@keyframes waveMove {
+    0%, 100% { d: path("M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"); }
+    50% { d: path("M0,80 C300,20 900,140 1200,80 L1200,120 L0,120 Z"); }
+}
+
+/* نجوم متلألئة */
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.star-1 { top: 20%; left: 10%; animation-delay: 0s; }
+.star-2 { top: 40%; left: 80%; animation-delay: 1s; }
+.star-3 { top: 70%; left: 30%; animation-delay: 2s; }
+.star-4 { top: 30%; left: 60%; animation-delay: 0.5s; }
+.star-5 { top: 80%; left: 70%; animation-delay: 1.5s; }
+.star-6 { top: 50%; left: 20%; animation-delay: 2.5s; }
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* شعار فاخر */
+.footer-logo-luxury {
+    position: relative;
+}
+
+.logo-glow-ring {
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    animation: logoGlowPulse 4s ease-in-out infinite;
+}
+
+@keyframes logoGlowPulse {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% { 
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.1;
+    }
+}
+
+.footer-logo-wrapper {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-logo-wrapper:hover {
+    transform: rotate(10deg) scale(1.1);
+    background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1)) !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* عنوان العلامة التجارية */
+.brand-title {
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.brand-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
+    transition: width 0.3s ease;
+}
+
+.footer-brand:hover .brand-title::after {
+    width: 100%;
+}
+
+.subtitle-line {
+    width: 20px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+}
+
+/* إحصائيات فاخرة */
+.luxury-stat-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.luxury-stat-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.stat-glow {
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.luxury-stat-card:hover .stat-glow {
+    opacity: 1;
+}
+
+.stat-icon {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.luxury-stat-card:hover .stat-icon {
+    transform: scale(1.2);
+    color: rgba(255,255,255,0.9) !important;
+}
+
+/* عداد الأرقام */
+.counter-number {
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.footer-stat-card {
+    background: rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.footer-stat-card:hover {
+    background: rgba(255,255,255,0.1) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* روابط Footer المحسنة */
+.footer-link {
+    color: rgba(255,255,255,0.8) !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.footer-link:hover {
+    color: #fff !important;
+    background: rgba(255,255,255,0.08);
+    transform: translateX(5px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.footer-link:hover::before {
+    left: 100%;
+}
+
+.footer-link i {
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-link:hover i {
+    color: #fff !important;
+    transform: scale(1.1);
+}
+
+.footer-link span {
+    font-weight: 500;
+}
+
+/* تحسين التباعد */
+.footer-link-item, .service-item {
+    border-left: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.footer-link-item:hover, .service-item:hover {
+    border-left-color: rgba(255,255,255,0.3);
+}
+
+/* أيقونات التواصل */
+.contact-icon {
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.contact-icon:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+}
+
+/* أزرار التواصل الاجتماعي الدائرية */
+.social-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+}
+
+.social-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.social-btn:hover::before {
+    transform: scale(1);
+}
+
+.social-btn i {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.social-btn.facebook {
+    background: rgba(24, 119, 242, 0.2);
+    color: #1877f2;
+}
+
+.social-btn.facebook::before {
+    background: #1877f2;
+}
+
+.social-btn.facebook:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(24, 119, 242, 0.3);
+}
+
+.social-btn.website {
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
+}
+
+.social-btn.website::before {
+    background: #3498db;
+}
+
+.social-btn.website:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+}
+
+/* تأثير النبضة للقلب */
+.pulse-animation {
+    animation: heartPulse 2s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* خط فاصل أنيق */
+.footer-divider {
+    height: 2px;
+    width: 40px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+    border-radius: 1px;
+}
+
+.footer-separator {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    margin: 2rem 0;
+}
+
+/* تحسينات الموبايل */
+@media (max-width: 768px) {
+    .footer-luxury {
+        margin-top: 2rem !important;
+    }
+    
+    .footer-section {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .footer-link:hover {
+        transform: none;
+        padding-left: 0;
+    }
+    
+    .footer-brand {
+        text-align: center;
+    }
+    
+    .footer-contact {
+        text-align: start;
+    }
+    
+    .social-section {
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        text-align: center !important;
+    }
+    
+    .footer-bottom .col-md-6 {
+        text-align: center !important;
+    }
+}
+
+/* تحسينات إضافية للتابلت */
+@media (max-width: 991.98px) and (min-width: 769px) {
+    .footer-section h5 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-link {
+        font-size: 0.85rem;
+    }
+}
+
+/* تأثيرات خاصة للشاشات الكبيرة */
+@media (min-width: 1200px) {
+    .footer-luxury {
+        margin-top: 5rem !important;
+    }
+    
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* تحسين التباعد */
+.footer-section h5 {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.footer-brand h4 {
+    letter-spacing: 0.3px;
+}
+
+/* تأثير التمرير السلس */
+.footer-elegant * {
+    scroll-behavior: smooth;
+}
+
+/* تأثيرات الجسيمات المتحركة */
+@keyframes float {
+    0% { 
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { 
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,310 @@
+/* Container */
+.reservations-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 2rem 0; 
+}
+
+/* Page Header */
+.page-header { 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    color: white; 
+    border-radius: 15px; 
+    padding: 2rem; 
+    margin-bottom: 2rem; 
+    text-align: center; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Statistics Cards */
+.stats-card {
+    background: white !important;
+    border-radius: 15px !important;
+    padding: 1.5rem !important;
+    text-align: center !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+}
+
+.stats-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15) !important;
+}
+
+.stats-icon {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.25rem !important;
+    color: #fff !important;
+    margin: 0 auto 1rem !important;
+    transition: transform 0.2s ease !important;
+}
+
+.stats-card:hover .stats-icon {
+    transform: scale(1.05) !important;
+}
+
+.stats-number {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
+    color: #2c3e50 !important;
+}
+
+.stats-label {
+    color: #6c757d !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    background: white !important;
+    border-radius: 15px !important;
+    padding: 1rem !important;
+    margin-bottom: 2rem !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+}
+
+.filter-tab {
+    display: inline-block !important;
+    padding: 0.75rem 1.5rem !important;
+    margin: 0.25rem !important;
+    border-radius: 25px !important;
+    text-decoration: none !important;
+    color: #6c757d !important;
+    background: #f8f9fc !important;
+    border: 2px solid transparent !important;
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+}
+
+.filter-tab:hover {
+    color: #667eea !important;
+    background: rgba(102, 126, 234, 0.1) !important;
+    border-color: rgba(102, 126, 234, 0.2) !important;
+    transform: translateY(-1px) !important;
+    text-decoration: none !important;
+}
+
+.filter-tab.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Reservation Cards */
+.reservation-card { 
+    background: white; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+    border: none; 
+    margin-bottom: 1.5rem; 
+    transition: all 0.3s ease; 
+    overflow: hidden;
+}
+
+.reservation-card:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.reservation-header { 
+    padding: 1.5rem; 
+    border-bottom: 1px solid #f1f3f4; 
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+.reservation-body { 
+    padding: 1.5rem; 
+}
+
+.book-title { 
+    font-size: 1.2rem; 
+    font-weight: 700; 
+    color: #2c3e50; 
+    margin-bottom: 0.5rem; 
+}
+
+.book-author { 
+    color: #6c757d; 
+    margin-bottom: 0.5rem; 
+    font-weight: 500;
+}
+
+/* Status Badges */
+.status-badge { 
+    padding: 0.5rem 1rem; 
+    border-radius: 20px; 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.status-pending {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+.status-available {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.status-borrowed {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+}
+
+.status-expired {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+}
+
+.status-cancelled {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    color: white;
+}
+
+/* Buttons */
+.btn-cancel { 
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); 
+    border: none; 
+    border-radius: 20px; 
+    padding: 0.5rem 1.5rem; 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+    transition: all 0.3s ease; 
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.btn-cancel:hover { 
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* No Reservations */
+.no-reservations { 
+    text-align: center; 
+    padding: 4rem 2rem; 
+    color: #6c757d; 
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.no-reservations i { 
+    font-size: 4rem; 
+    margin-bottom: 1.5rem; 
+    opacity: 0.5; 
+    color: #667eea;
+}
+
+.no-reservations h5 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.no-reservations .btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+.no-reservations .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Expiry Warning */
+.expiry-warning { 
+    background: rgba(239, 68, 68, 0.1); 
+    border: 1px solid #ef4444; 
+    border-radius: 10px; 
+    padding: 1rem; 
+    margin-top: 1rem; 
+}
+
+.time-remaining { 
+    font-weight: 600; 
+    color: #ef4444; 
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .reservations-container {
+        padding: 1rem 0;
+    }
+    
+    .stats-card {
+        margin-bottom: 1rem;
+    }
+    
+    .filter-tabs {
+        padding: 0.5rem;
+    }
+    
+    .filter-tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .page-header {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .reservation-card {
+        margin-bottom: 1rem;
+    }
+    
+    .reservation-header,
+    .reservation-body {
+        padding: 1rem;
+    }
+    
+    .stats-number {
+        font-size: 1.5rem !important;
+    }
+    
+    .stats-icon {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 1.1rem !important;
+    }
+    
+    .filter-tab {
+        display: block !important;
+        margin: 0.25rem 0 !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .no-reservations {
+        padding: 2rem 1rem;
+    }
+    
+    .no-reservations i {
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,89 @@
+/* Styles for Edit Customer Modal */
+:root { --primary:#2196F3; --primary-dark:#1E88E5; --bg:#f5f7fb; --card:#ffffff; --border:#e5e7eb; --text:#1f2937; }
+body{ font-family:'Cairo', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); }
+.container { max-width: 720px; }
+.card-glass{ background: rgba(255,255,255,0.9); border:1px solid rgba(255,255,255,0.45); border-radius:16px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow:0 8px 18px rgba(0,0,0,.06); }
+.card-header{ background: var(--card); border-bottom:1px solid var(--border); }
+.form-label{ font-weight:700; color:#334155; }
+.form-control:focus{ box-shadow: 0 0 0 .2rem rgba(33,150,243,.12); border-color: var(--primary); }
+.actions{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.btn-primary{ background:var(--primary); border-color:var(--primary-dark); }
+.btn-primary:hover{ background:var(--primary-dark); }
+.hint{ color:#6b7280; font-size:.9rem; }
+/* لتوحيد تنسيق الأزرار مثل صفحة الإضافة */
+.actions .btn{ min-width:130px; }
+/* مسافة منطقية بين الأيقونة والنص تعمل RTL/LTR */
+.icon-gap{ margin-inline-end: .5rem; }
+
+/* تنسيق عالمي ومتماسك لصف أرقام الجوال (مطابق لصفحة الإضافة) */
+.phone-row { align-items: stretch; }
+.phone-row .input-group-text { background:#f1f5f9; border-color:#e5e7eb; }
+.phone-row .form-control { border-inline-start: 0; }
+.phone-row .btn-icon {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding-inline:.5rem; min-width:2.25rem;
+}
+.phone-row .btn-icon i { font-size:1rem; }
+.phone-row .btn-outline-success, .phone-row .btn-outline-danger { border-color:#e5e7eb; }
+.phone-row .btn-outline-success:hover { background:#e8f5e9; }
+.phone-row .btn-outline-danger:hover { background:#ffebee; }
+
+/* مسافات مدمجة بين الصفوف */
+#phonesRepeaterEdit .phone-row, #phonesRepeater .phone-row { margin-bottom:.25rem; }
+
+/* --- أيقونات داخل الحقل (بنية position-relative) --- */
+.phone-row.position-relative { position: relative; }
+.phone-row .form-control {
+  /* حشوات صريحة لضمان ثبات المحاذاة في RTL */
+  padding-left: 2.25rem;  /* مساحة زر الإضافة/الحذف داخل الحقل (يسار) */
+  padding-right: 2rem;    /* مساحة أيقونة الهاتف داخل الحقل (يمين) */
+  height: 42px;
+  border-radius: .5rem;
+}
+.field-icon.start{
+  position:absolute;
+  right:.75rem; /* داخل الحقل من الجهة اليمنى */
+  top:50%; transform:translateY(-50%);
+  color:#64748b; pointer-events:none; font-size:1rem; z-index:1;
+}
+.icon-btn{
+  position:absolute; left:.5rem; top:50%; transform:translateY(-50%);
+  border:1px solid #e2e8f0 !important; background:#f8fafc !important; width:2rem; height:2rem; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:none; z-index:2;
+  transition: background-color .15s ease, color .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.icon-btn i{ font-size:1rem; }
+.icon-btn.add-phone{ color:#16a34a; }
+.icon-btn.add-phone:hover{ background:#e8f5e9; border-color:#c7eed8 !important; box-shadow:0 0 0 .15rem rgba(22,163,74,.15); }
+.icon-btn.add-phone:hover i{ color:#15803d; }
+.icon-btn.remove-phone{ color:#dc2626; }
+.icon-btn.remove-phone:hover{ background:#fee2e2; border-color:#fecaca !important; box-shadow:0 0 0 .15rem rgba(220,38,38,.12); }
+.icon-btn.remove-phone:hover i{ color:#b91c1c; }
+.icon-btn:focus{ outline:none; box-shadow:none; }
+
+/* إبراز الأيقونة عند التركيز داخل الحقل */
+.phone-row:focus-within .field-icon.start{ color:#0d6efd; }
+
+/* ===== Password field (Edit Customer) ===== */
+/* نستخدم مستوى خصوصية أعلى ليتغلب على add_customer.css */
+.card-body .modern-input-group{ position: relative; }
+.card-body .modern-input-group .modern-form-control{
+  height: 44px;
+  border-radius: .5rem;
+  padding-inline-start: 2rem !important;   /* مساحة أيقونة القفل */
+  padding-inline-end: 1.8rem !important;   /* مساحة العين (أقل) */
+}
+.card-body .modern-input-group .input-icon{
+  position: absolute;
+  inset-inline-start: .6rem;               /* بداية الحقل (يدعم RTL/LTR) */
+  top: 50%; transform: translateY(-50%);
+  color: #64748b; pointer-events: none; font-size: 1rem;
+}
+.card-body .modern-input-group .toggle-password-icon{
+  position: absolute;
+  right: .25rem !important;                /* دعم صريح لـ RTL */
+  right: 18rem !important;                   /* ألغِ أي left سابق */
+  width: 24px; height: 24px;               /* مساحة نقرة صغيرة فقط */
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #0d6efd; font-size: 1rem; cursor: pointer; background: transparent;
+}

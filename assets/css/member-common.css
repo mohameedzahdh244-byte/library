@@ -1,0 +1,26 @@
+:root { --primary-color:#1f2d3a; --secondary-color:#0b5ed7; --success-color:#27ae60; --warning-color:#f39c12; --danger-color:#e74c3c; }
+
+/* أساسيات عامة */
+body{ font-family:'Cairo',sans-serif; background:#f8f9fa; }
+
+/* شريط علوي مشترك */
+.navbar-custom{ background:rgba(255,255,255,.95); backdrop-filter:blur(10px); box-shadow:0 2px 20px rgba(0,0,0,.1); }
+
+/* بطاقات الإحصائيات المشتركة */
+.stats-card{ background:#fff; border-radius:15px; padding:1.5rem; box-shadow:0 5px 15px rgba(0,0,0,.08); transition:transform .3s ease; border:none; text-align:center; }
+.stats-card:hover{ transform:translateY(-5px); }
+.stats-icon{ width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; color:#fff; margin:0 auto 1rem; }
+.stats-number{ font-size:2rem; font-weight:700; margin-bottom:.5rem; display:block; text-align:center; }
+.stats-label{ color:#6c757d; font-size:.9rem; display:block; text-align:center; }
+
+/* بطاقات عامة متكررة */
+.content-card{ background:#fff; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,.08); border:none; }
+
+/* شارات حالة عامة قد تُستخدم بأكثر من صفحة */
+.status-active{ background:var(--success-color); color:#fff; }
+.status-expired{ background:var(--danger-color); color:#fff; }
+.status-overdue{ background:var(--danger-color); color:#fff; }
+.status-returned{ background:var(--success-color); color:#fff; }
+.status-pending{ background:var(--warning-color); color:#fff; }
+.status-available{ background:var(--success-color); color:#fff; }
+.status-borrowed{ background:var(--secondary-color); color:#fff; }

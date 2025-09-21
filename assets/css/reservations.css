@@ -1,0 +1,151 @@
+:root {
+    --primary-color: #0f172a; /* slate-900 */
+    --secondary-color: #0ea5e9; /* sky-500 */
+    --success-color: #22c55e; /* green-500 */
+    --warning-color: #f59e0b; /* amber-500 */
+    --danger-color: #ef4444;  /* red-500 */
+    --glass-bg: linear-gradient(135deg, rgba(255,255,255,0.68), rgba(255,255,255,0.42));
+    --glass-border: rgba(255,255,255,0.45);
+    --glass-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    --glass-radius: 28px;
+    --elevate-shadow: 0 16px 40px rgba(2, 6, 23, 0.12);
+    --focus-ring: 0 0 0 .2rem rgba(14,165,233,.25);
+}
+/* Grouped glass buttons (segmented pill) */
+.btn-group .btn-glass { border-radius: 0 !important; }
+.btn-group .btn-glass:first-child { border-top-right-radius: 999px !important; border-bottom-right-radius: 999px !important; }
+.btn-group .btn-glass:last-child  { border-top-left-radius: 999px !important;  border-bottom-left-radius: 999px !important; }
+
+/* Compact badge */
+.badge-compact { padding: .35rem .6rem; font-size: .75rem; }
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: #f8f9fa;
+}
+
+.reservations-container { max-width: 1320px; margin: 0 auto; padding: 1.5rem 1rem; }
+@media (min-width: 768px) { .reservations-container { padding: 2rem 1.25rem; } }
+@media (min-width: 1200px) { .reservations-container { padding: 2.5rem 1.5rem; } }
+
+.card-glass { border-radius: var(--glass-radius); border: 1px solid var(--glass-border); background: var(--glass-bg); backdrop-filter: blur(12px) saturate(130%); -webkit-backdrop-filter: blur(12px) saturate(130%); box-shadow: var(--glass-shadow); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.card-glass:hover { transform: translateY(-3px); box-shadow: var(--elevate-shadow); border-color: rgba(14,165,233,.35); }
+
+.stats-icon { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: #fff; transition: transform .2s ease; }
+.card-glass:hover .stats-icon { transform: scale(1.05); }
+
+.stats-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stats-label {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.reservation-card { border-radius: var(--glass-radius); }
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Glass badges */
+.badge-glass { backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); box-shadow: 0 4px 12px rgba(2,6,23,0.08); border: 1px solid rgba(255,255,255,0.35); }
+.badge-glass.bg-success { background: rgba(34,197,94,.18) !important; color: #16a34a !important; border-color: rgba(34,197,94,.5) !important; }
+.badge-glass.bg-warning { background: rgba(245,158,11,.22) !important; color: #7a5e00 !important; border-color: rgba(245,158,11,.5) !important; }
+.badge-glass.bg-danger  { background: rgba(239,68,68,.18) !important; color: #b91c1c !important; border-color: rgba(239,68,68,.5) !important; }
+.badge-glass.bg-secondary{ background: rgba(100,116,139,.18) !important; color: #475569 !important; border-color: rgba(100,116,139,.45) !important; }
+.badge-glass i { color: inherit; }
+
+.status-pending {
+    background: var(--warning-color);
+    color: white;
+}
+
+.status-available {
+    background: var(--success-color);
+    color: white;
+}
+
+.status-expired {
+    background: var(--danger-color);
+    color: white;
+}
+
+.status-cancelled {
+    background: #6c757d;
+    color: white;
+}
+
+.back-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--secondary-color);
+}
+
+.btn-action {
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Glass buttons */
+.btn-glass { border-radius: 999px !important; font-weight: 600; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: background .15s ease, border-color .15s ease, box-shadow .15s ease; }
+.btn-glass:focus { box-shadow: 0 0 0 .2rem rgba(13,110,253,.15); }
+/* Variants keep colored text for contrast; hover increases opacity without inverting text */
+.btn-glass-success { color: #198754; background: rgba(25,135,84,.12); border: 1px solid rgba(25,135,84,.45); }
+.btn-glass-success:hover, .btn-glass-success:active { background: rgba(25,135,84,.24); border-color: rgba(25,135,84,.65); color:#198754; }
+
+.btn-glass-danger  { color: #dc3545; background: rgba(220,53,69,.12); border: 1px solid rgba(220,53,69,.45); }
+.btn-glass-danger:hover, .btn-glass-danger:active { background: rgba(220,53,69,.24); border-color: rgba(220,53,69,.65); color:#dc3545; }
+
+.btn-glass-info    { color: #0aa1c0; background: rgba(13,202,240,.12); border: 1px solid rgba(13,202,240,.45); }
+.btn-glass-info:hover, .btn-glass-info:active { background: rgba(13,202,240,.24); border-color: rgba(13,202,240,.65); color:#0aa1c0; }
+
+.btn-glass-primary { color: #0d6efd; background: rgba(13,110,253,.12); border: 1px solid rgba(13,110,253,.45); }
+.btn-glass-primary:hover, .btn-glass-primary:active { background: rgba(13,110,253,.24); border-color: rgba(13,110,253,.65); color:#0d6efd; }
+
+.btn-glass-warning { color: #7a5e00; background: rgba(255,193,7,.22); border: 1px solid rgba(255,193,7,.5); }
+.btn-glass-warning:hover, .btn-glass-warning:active { background: rgba(255,193,7,.30); border-color: rgba(255,193,7,.65); color:#7a5e00; }
+
+/* Header glass hero */
+.page-header-glass { border-radius: var(--glass-radius); border: 1px solid var(--glass-border); background: var(--glass-bg); backdrop-filter: blur(12px) saturate(130%); -webkit-backdrop-filter: blur(12px) saturate(130%); box-shadow: var(--glass-shadow); overflow: hidden; }
+.page-header-glass.sticky { position: sticky; top: 0; z-index: 1040; box-shadow: var(--elevate-shadow); }
+.page-header-glass.header-gradient { background: linear-gradient(135deg, rgba(79,70,229,.85), rgba(6,182,212,.85)), var(--glass-bg); color:#fff; border: none; }
+.page-header-glass.header-gradient h2, .page-header-glass.header-gradient i { color:#fff; }
+.page-header-glass.header-gradient .back-link { color: rgba(255,255,255,.95); }
+.page-header-glass.header-gradient .back-link:hover { color: #fff; text-decoration: underline; }
+
+.page-header { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: #fff; border-radius: 15px; padding: 2rem; margin-bottom: 2rem; text-align: center; }
+
+.filter-tabs { position: static; z-index: auto; border-radius: var(--glass-radius); border: 1px solid var(--glass-border); background: var(--glass-bg); backdrop-filter: blur(12px) saturate(130%); -webkit-backdrop-filter: blur(12px) saturate(130%); padding: .5rem; margin-bottom: 2rem; box-shadow: var(--glass-shadow); }
+
+.filter-tab { padding: .5rem 1rem; border-radius: 999px; cursor:pointer; transition: background .2s ease, color .2s ease, border-color .2s, transform .1s ease; border: 1px solid transparent; text-decoration:none; color: var(--primary-color); user-select: none; }
+
+.filter-tab.active, .filter-tab:hover { background: rgba(14,165,233,.12); color: #0ea5e9; border-color: rgba(14,165,233,.35); }
+.filter-tab:active { transform: scale(.98); }
+
+.filter-tab.active { background: rgba(14,165,233,.12); color: #0ea5e9; border-color: rgba(14,165,233,.35); }
+
+/* Embedded mode: make header full-width gradient, remove outer radius, keep inner spacing */
+body.embedded .page-header-glass { border-radius: 0; }
+body.embedded .page-header-glass.header-gradient { background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%); color:#fff; }
+body.embedded .page-header-glass h2 { color:#fff; font-weight:800; }
+body.embedded .page-header-glass i { color:#fff; }
+@media (min-width: 768px) { body.embedded .page-header-glass h2 { font-size: 1.875rem; } }
+
+/* Animations & focus */
+.fade-in-up { animation: fadeInUp .35s ease forwards; opacity: 0; }
+@keyframes fadeInUp { from { transform: translateY(6px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.btn:focus-visible, .filter-tab:focus-visible { outline: none; box-shadow: var(--focus-ring); }

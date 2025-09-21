@@ -1,0 +1,28 @@
+/* تخصيصات رسائل وإسقاط الاقتراحات لحقول الناشر/المؤلف/المورد */
+#publisher_result,
+#author_result,
+#supplier_result {
+  max-height: 260px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  margin-top: .25rem;
+}
+#publisher_message .alert,
+#author_message .alert,
+#supplier_message .alert { border-radius: .25rem; }
+/* لمسات على عناصر القائمة داخل النتائج */
+#publisher_result .list-group-item,
+#author_result .list-group-item,
+#supplier_result .list-group-item { border: 0; padding: .5rem .75rem; }
+#publisher_result .list-group-item + .list-group-item,
+#author_result .list-group-item + .list-group-item,
+#supplier_result .list-group-item + .list-group-item { border-top: 1px solid rgba(0,0,0,.05); }
+#publisher_result .list-group-item:hover,
+#author_result .list-group-item:hover,
+#supplier_result .list-group-item:hover { background: #f8f9fa; }
+#publisher_result .alert,
+#author_result .alert,
+#supplier_result .alert { border-radius: .375rem; padding: .5rem .75rem; }

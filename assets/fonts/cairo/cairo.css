@@ -1,0 +1,32 @@
+/* Cairo Font - Local TTF files (weights: 300, 400, 600, 700) */
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Cairo Light'), local('Cairo-Light'), url('cairo-300.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Cairo Regular'), local('Cairo-Regular'), url('cairo-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cairo SemiBold'), local('Cairo-SemiBold'), url('cairo-600.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Cairo Bold'), local('Cairo-Bold'), url('cairo-700.ttf') format('truetype');
+}

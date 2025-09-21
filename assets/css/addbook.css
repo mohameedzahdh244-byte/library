@@ -1,0 +1,23 @@
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 20px;
+}
+.form-label {
+    font-weight: 600;
+}
+button.btn-success {
+    min-width: 130px;
+}
+
+/* Modal-specific adjustments for Add Book */
+#addBookModal .modal-dialog {
+    max-width: 1000px;
+}
+#addBookModal .modal-content {
+    border-radius: 0.75rem;
+}
+#addBookModal .modal-body {
+    max-height: calc(100vh - 220px);
+    overflow: auto;
+}
