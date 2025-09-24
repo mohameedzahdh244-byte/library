@@ -119,7 +119,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-          url: '../admin/customer/addcustomer_process.php',
+          url: '../../../admin/customer/addcustomer_process.php',
             method: 'POST',
             data: $(this).serialize(),
             dataType: 'json',

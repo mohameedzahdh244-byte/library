@@ -23,7 +23,7 @@ $(document).ready(function () {
         var formEl = this;
         var fd = new FormData(formEl);
         $.ajax({
-            url: '../admin/books/addbook_process.php',
+            url: '../../../admin/books/addbook_process.php',
             method: 'POST',
             data: fd,
             dataType: 'json',
