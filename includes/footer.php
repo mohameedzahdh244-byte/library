@@ -92,7 +92,7 @@
                                 </a>
                             </div>
                             <div class="footer-link-item mb-3">
-                                <a href="search.php" class="footer-link d-flex align-items-center py-2">
+                                <a href="../includes/search.php" class="footer-link d-flex align-items-center py-2">
                                     <i class="fas fa-search me-3 text-white-50" style="width: 18px;"></i>
                                     <span>البحث عن الكتب</span>
                                 </a>

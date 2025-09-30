@@ -5,13 +5,13 @@
  */
 
 // كشف المسار الأساسي تلقائياً
-$script_path = $_SERVER['SCRIPT_NAME']; // مثل: /Librarysystem/admin/customer/addcustomer.php
+$script_path = $_SERVER['SCRIPT_NAME']; // مثل: /librarysystem/admin/customer/addcustomer.php
 $path_parts = explode('/', trim($script_path, '/'));
 
 // إزالة اسم الملف والمجلدات الفرعية للوصول لجذر المشروع
-// نفترض أن المشروع في مجلد Librarysystem
-if (count($path_parts) >= 3 && $path_parts[0] === 'Librarysystem') {
-    $base_path = '/Librarysystem';
+// نفترض أن المشروع في مجلد librarysystem
+if (count($path_parts) >= 3 && $path_parts[0] === 'librarysystem') {
+    $base_path = '/librarysystem';
 } else {
     // إذا كان في الجذر مباشرة
     $base_path = '';

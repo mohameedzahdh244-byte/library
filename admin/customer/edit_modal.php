@@ -43,6 +43,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           $cSet[] = 'mem_birth = NULL';
           continue;
         }
+        // خاص: mem_id عمود عددي في قاعدة البيانات. إذا كان الإدخال فارغًا خزّن NULL، وإلا خزّن قيمة صحيحة.
+        if ($col === 'mem_id') {
+          $memIdRaw = trim((string)($_POST['mem_id'] ?? ''));
+          if ($memIdRaw === '') {
+            $cSet[] = 'mem_id = NULL';
+            continue;
+          } else {
+            $cSet[] = 'mem_id = ?';
+            $cTypes .= 'i';
+            $cVals[] = intval($memIdRaw);
+            continue;
+          }
+        }
         $cSet[] = "$col = ?";
         $cTypes .= $typ;
         $cVals[] = isset($_POST[$col]) ? $_POST[$col] : '';
