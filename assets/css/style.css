@@ -83,12 +83,28 @@ body {
     transition: background-color 0.3s, color 0.3s ease;
 }
 
-/* Isolate alert styles */
-.login-alert * {
-    background: none !important;
-    color: inherit !important;
-    border: none !important;
-    box-shadow: none !important;
+/* Login alert styles */
+.login-alert {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.login-alert.alert-danger {
+    background-color: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+.login-alert .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+.login-alert .btn-close:hover {
+    opacity: 1;
 }
 
 

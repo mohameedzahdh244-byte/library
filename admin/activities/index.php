@@ -18,15 +18,15 @@ $isEmbed = isset($_GET['embed']) && $_GET['embed'] == '1';
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>إدارة الأنشطة</title>
-  <link href="../../assets/css/bootstrap.css" rel="stylesheet">
-  <link href="../../assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../../assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
-  <link rel="icon" type="image/x-icon" href="../../public/logo.ico">
+  <link href="<?= CSS_URL ?>/bootstrap.css" rel="stylesheet">
+  <link href="<?= CSS_URL ?>/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?= ASSETS_URL ?>/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="<?= ASSETS_URL ?>/vendor/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="icon" type="image/x-icon" href="<?= PUBLIC_URL ?>/logo.ico">
   
-  <!-- Flatpickr CSS for enhanced date/time picker -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+  <!-- Flatpickr CSS for enhanced date/time picker (Local) -->
+  <link rel="stylesheet" href="<?= ASSETS_URL ?>/vendor/flatpickr/css/flatpickr.min.css">
+  <link rel="stylesheet" href="<?= ASSETS_URL ?>/vendor/flatpickr/themes/material_blue.css">
   
   <style>
     
@@ -656,10 +656,10 @@ $isEmbed = isset($_GET['embed']) && $_GET['embed'] == '1';
   </div>
 </div>
 
-<script src="../../assets/js/bootstrap.bundle.min.js"></script>
-<!-- Flatpickr JS for enhanced date/time picker -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ar.js"></script>
+<script src="<?= JS_URL ?>/bootstrap.bundle.min.js"></script>
+<!-- Flatpickr JS for enhanced date/time picker (Local) -->
+<script src="<?= ASSETS_URL ?>/vendor/flatpickr/js/flatpickr.min.js"></script>
+<script src="<?= ASSETS_URL ?>/vendor/flatpickr/l10n/ar.js"></script>
 <script>
 // ===== Initialize Variables =====
 const form = document.getElementById('activityForm');

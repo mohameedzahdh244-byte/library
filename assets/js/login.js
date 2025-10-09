@@ -71,9 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function createAlert(message, type = 'info', duration = 3000) {
-    // دائماً استخدم alert-danger (أحمر)
-        type = 'error';
-            // إزالة أي alert موجود مسبقاً
+        // إزالة أي alert موجود مسبقاً
         const existingAlert = document.querySelector('.login-alert');
         if (existingAlert) existingAlert.remove();
 
@@ -90,6 +88,17 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="flex-fill">${message}</div>
             <button type="button" class="btn-close ms-2" aria-label="إغلاق"></button>
         `;
+
+        // إضافة وظيفة إغلاق التنبيه
+        const closeBtn = alert.querySelector('.btn-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                alert.classList.remove('show');
+                setTimeout(() => {
+                    if (alert.parentNode) alert.remove();
+                }, 200);
+            });
+        }
 
        
 
@@ -132,10 +141,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: formData
             })
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('خطأ في الشبكة');
-                }
-                return response.json();
+                return response.json().then(data => {
+                    if (!response.ok) {
+                        // إذا كان هناك خطأ HTTP، ارمي الرسالة من الخادم
+                        throw new Error(data.message || 'خطأ في الشبكة');
+                    }
+                    return data;
+                });
             })
             .then(data => {
                 if (data.success && data.redirect) {
@@ -150,7 +162,9 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => {
                 console.error('خطأ:', error);
-                createAlert('حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى.', 'error');
+                // عرض رسالة الخطأ الفعلية من الخادم أو رسالة عامة
+                const errorMessage = error.message || 'حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى.';
+                createAlert(errorMessage, 'error');
                 
                 // إعادة تفعيل الزر
                 submitButton.disabled = false;

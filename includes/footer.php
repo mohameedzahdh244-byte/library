@@ -222,7 +222,7 @@
                             <small class="text-white-50">صُنع بـ</small>
                             <i class="fas fa-heart text-danger pulse-animation"></i>
                             <small class="text-white-50">في فلسطين</small>
-                            <img src="https://flagcdn.com/16x12/ps.png" alt="فلسطين" class="ms-1">
+                            <img src="../public/flags/ps.png" alt="فلسطين" class="ms-1">
                         </div>
                     </div>
                 </div>

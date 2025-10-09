@@ -17,6 +17,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // تضمين ملفات الإعدادات
+require_once 'paths.php';
 require_once 'DB.php';
 require_once 'session.php';
 require_once 'settings.php';

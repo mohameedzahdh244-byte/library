@@ -63,33 +63,30 @@ $records = cleanupWindow($records, $now, $windowSecs);
 $ipRec = $records[$clientIp] ?? ['attempts' => []];
 if (!empty($ipRec['block_until']) && $now < $ipRec['block_until']) {
     $retryAfter = $ipRec['block_until'] - $now;
+    
+    // تحويل الثواني إلى دقائق وثواني
+    $minutes = floor($retryAfter / 60);
+    $seconds = $retryAfter % 60;
+    
+    if ($minutes > 0) {
+        $timeMessage = $minutes . ' دقيقة';
+        if ($seconds > 0) {
+            $timeMessage .= ' و ' . $seconds . ' ثانية';
+        }
+    } else {
+        $timeMessage = $seconds . ' ثانية';
+    }
+    
     http_response_code(429);
     echo json_encode([
         'success' => false,
-        'message' => 'تم حظرك مؤقتًا بسبب محاولات متكررة. حاول بعد ' . $retryAfter . ' ثانية.',
+        'message' => 'تم حظرك مؤقتًا بسبب محاولات متكررة. حاول بعد ' . $timeMessage . '.',
         'type' => 'warning'
     ], JSON_UNESCAPED_UNICODE);
     exit();
 }
 
 try {
-// حد محاولات بسيط عبر الجلسة (5 محاولات خلال 10 دقائق)
-if (!isset($_SESSION['login_attempts'])) {
-    $_SESSION['login_attempts'] = ['count' => 0, 'first' => time()];
-}
-$attempts = &$_SESSION['login_attempts'];
-// إعادة ضبط النافذة الزمنية بعد 10 دقائق
-if (time() - ($attempts['first'] ?? 0) > 600) { // 600 ثانية
-    $attempts = ['count' => 0, 'first' => time()];
-}
-if ($attempts['count'] >= 5) {
-    echo json_encode([
-        'success' => false,
-        'message' => 'عدد محاولات تسجيل الدخول كبير. حاول مجددًا بعد قليل.',
-        'type' => 'warning'
-    ]);
-    exit();
-}
 
 if (
     $_SERVER["REQUEST_METHOD"] === "POST" &&
@@ -139,8 +136,6 @@ if (
             $_SESSION['last_activity'] = time();
             $_SESSION['session_start_time'] = time();
 
-            // إعادة ضبط العدّاد بعد نجاح الدخول
-            $_SESSION['login_attempts'] = ['count' => 0, 'first' => time()];
 
             // تحديد التوجيه حسب نوع المستخدم
             if ($row['user_type'] === 'admin') {
@@ -189,8 +184,6 @@ if (
                 $_SESSION['last_activity'] = time();
                 $_SESSION['session_start_time'] = time();
 
-                // إعادة ضبط العدّاد بعد نجاح الدخول
-                $_SESSION['login_attempts'] = ['count' => 0, 'first' => time()];
 
                 $redirectUrl = '../member/dashboard.php';
 
@@ -206,8 +199,7 @@ if (
         }
     }
 
-    // فشل: زيادة العدّاد (جلسة) وتسجيل محاولة IP وقد ينتج عنه حظر
-    $_SESSION['login_attempts']['count'] = ($_SESSION['login_attempts']['count'] ?? 0) + 1;
+    // فشل: تسجيل محاولة IP وقد ينتج عنه حظر
     $records[$clientIp]['attempts'][] = $now;
     $records = cleanupWindow($records, $now, $windowSecs);
     if (count($records[$clientIp]['attempts']) >= $maxAttempts) {
